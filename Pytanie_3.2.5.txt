@@ -1,0 +1,4 @@
+*Pytanie: Kiedy warto (lub trzeba) korzystac z adaptera klasy (wariant z projektu stazysty)?
+
+Adaptera warto (lub trzeba) uzywac, jezeli korzystamy na przyklad z biblioteki zewnetrzenej, ktorej metody zwracaja nieodpowiedni dla nas typ danych.
+Adapter bedzie wtedy sluzyl glownie do zaadaptowania danych wyjsciowych z tych metod na potrzeby naszej klasy, ktora z niego korzysta.
