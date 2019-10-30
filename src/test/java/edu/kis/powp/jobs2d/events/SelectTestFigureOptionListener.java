@@ -19,8 +19,7 @@ public class SelectTestFigureOptionListener implements ActionListener {
 
 		if(e.getActionCommand().contains("1")){
 			FiguresJoe.figureScript1(driverManager.getCurrentDriver());
-		}else
-		{
+		}else {
 			FiguresJoe.figureScript2(driverManager.getCurrentDriver());
 		}
 	}

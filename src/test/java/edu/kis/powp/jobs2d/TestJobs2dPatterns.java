@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.command.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -26,8 +27,9 @@ public class TestJobs2dPatterns {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
 
-		application.addTest("Figure 1", selectTestFigureOptionListener);
-		application.addTest("Figure 2", selectTestFigureOptionListener);
+		application.addTest("Figure 1 - basic", selectTestFigureOptionListener);
+		application.addTest("Figure 2 - basic", selectTestFigureOptionListener);
+		application.addTest("Figure 1 - special", selectTestFigureOptionListener);
 	}
 
 	/**
@@ -42,6 +44,9 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver testDriver = new DrawerAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
+
+		Job2dDriver newDriver = new LineDrawerAdapter();
+		DriverFeature.addDriver("New Driver", newDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
@@ -84,7 +89,7 @@ public class TestJobs2dPatterns {
 			public void run() {
 				Application app = new Application("2d jobs Visio");
 				DrawerFeature.setupDrawerPlugin(app);
-				setupDefaultDrawerVisibilityManagement(app);
+				//setupDefaultDrawerVisibilityManagement(app);
 
 				DriverFeature.setupDriverPlugin(app);
 				setupDrivers(app);
