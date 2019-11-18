@@ -6,11 +6,11 @@ public class SetPositionCommand implements DriverCommand{
     private int X = 0, Y = 0;
     private Job2dDriver driver;
 
-    public void SetPosiitonCommand(int x, int y, Job2dDriver job2dDriver){
+    public SetPositionCommand(int x, int y, Job2dDriver job2dDriver){
         this.X = x;
         this.Y = y;
         this.driver = job2dDriver;
-    };
+    }
 
     @Override
     public void execute() {
